@@ -16,7 +16,7 @@ class ProductResource extends JsonResource
     public function toArray(Request $request): array
     {
         if($this->product_image_id !== null) {
-            $oProductImage = ProductImage::find($this->product_image_id);
+            $oProductImage = $this->image;
             if(isset($oProductImage)) {
                 return [
                     'id' => $this->id,
